@@ -9,9 +9,16 @@
   </head>
   <body>
     <div class="container">
-      <div id="email"></div>
-      <br />
-      <button id="addEmail">Add email</button><button id="getEmails">Get emails count</button>
+      <div class="form">
+        <div class="form__content">
+          <h2 class="form__title">Share <strong>Board name</strong> with others</h2>
+          <div id="email"></div>
+        </div>
+        <div class="form__actions">
+          <button class="button" id="addEmail">Add email</button>
+          <button class="button" id="getEmails">Get emails count</button>
+        </div>
+      </div>
     </div>
     <script src="../src/index.js"></script>
     <script>
@@ -29,9 +36,7 @@
         alert(editor.getAllValidTags().length);
       });
 
-      editor.on("email_list_change", list => console.log("list1", list));
-      editor.on("email_list_change", list => console.log("list2", list));
-      editor.setTagList(["asd@asd.com", "asd@asd1.com"]);
+      editor.on("list_change", list => console.log("Tag list changed", list));
     </script>
   </body>
 </html>
