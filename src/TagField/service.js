@@ -1,29 +1,32 @@
+import { TAGS_CHANGE } from "./events";
+
 const createTagService = ({ isValidTag }) => {
   let tags = [];
   const subscribers = [];
 
-  const handleChange = () => subscribers.forEach(subscribe => subscribe.cb(tags));
+  const handleTagsChange = () =>
+    subscribers.filter(subscribe => subscribe.eventType === TAGS_CHANGE).forEach(subscribe => subscribe.cb(tags));
 
   return {
     getTags: () => tags,
     setTagList: (newTags = []) => {
       tags = newTags;
-      handleChange();
+      handleTagsChange();
     },
     getAllValidTags: () => tags.filter(isValidTag),
     addTag: tag => {
       if (tags.includes(tag)) return;
       tags.push(tag);
-      handleChange();
+      handleTagsChange();
     },
     removeTag: tag => {
       tags.splice(tags.indexOf(tag), 1);
-      handleChange();
+      handleTagsChange();
     },
     removeLastTag: () => {
       if (tags.length > 0) {
         tags.splice(-1);
-        handleChange();
+        handleTagsChange();
       }
     },
     on: (eventType, cb) => {

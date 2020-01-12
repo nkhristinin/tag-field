@@ -1,5 +1,6 @@
 import { createInput, clearTags, createTags, createElementWithClass } from "./dom";
 import createTagService from "./service";
+import { TAGS_CHANGE } from "./events";
 
 const TagField = ({
   container,
@@ -34,7 +35,7 @@ const TagField = ({
 
   renderTags({ container, tagService });
 
-  tagService.on("list_change", tags => {
+  tagService.on(TAGS_CHANGE, tags => {
     renderTags({ container, tagService });
   });
 
