@@ -37,18 +37,18 @@ export const createTags = ({ tagService }) => {
   });
 };
 
+export const transformStringToTags = (delimiters = [], stringInput = "") =>
+  delimiters
+    .reduce((acc, val) => acc.replace(new RegExp(`\\${val}`, "g"), " "), stringInput)
+    .split(" ")
+    .filter(str => str !== "")
+    .map(item => item.trim());
+
 export const createInput = ({ delimiters, tagService }) => {
   const TagFieldInput = createElementWithClass("input", "tag-field__input");
   TagFieldInput.placeholder = "add more people...";
 
-  const processTags = input => {
-    delimiters
-      .reduce((acc, val) => acc.replace(val, " "), input)
-      .split(" ")
-      .filter(str => str !== "")
-      .map(item => item.trim())
-      .forEach(tagService.addTag);
-  };
+  const processTags = stringInput => transformStringToTags(delimiters, stringInput).map(tagService.addTag);
 
   const handleAddTag = e => {
     const email = e.target.value;
