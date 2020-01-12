@@ -1,0 +1,15 @@
+{
+  "name": "tag-input",
+  "version": "0.1.0",
+  "description": "Tag input",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel demo/index.html --out-dir build",
+    "build": "parcel build src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}

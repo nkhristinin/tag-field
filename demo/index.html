@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./demo.css" />
+    <title>Email editor</title>
+  </head>
+  <body>
+    <div class="container">
+      <div id="email"></div>
+      <br />
+      <button id="addEmail">Add email</button><button id="getEmails">Get emails count</button>
+    </div>
+    <script src="../src/index.js"></script>
+    <script>
+      const emailContainer = document.querySelector("#email");
+
+      const editor = EmailEditor({
+        container: emailContainer,
+      });
+
+      document.querySelector("#addEmail").addEventListener("click", () => {
+        editor.addTag(`e-${Math.floor(Math.random() * 100)}@mail.com`);
+      });
+
+      document.querySelector("#getEmails").addEventListener("click", () => {
+        alert(editor.getAllValidTags().length);
+      });
+
+      editor.on("email_list_change", list => console.log("list1", list));
+      editor.on("email_list_change", list => console.log("list2", list));
+      editor.setTagList(["asd@asd.com", "asd@asd1.com"]);
+    </script>
+  </body>
+</html>
