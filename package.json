@@ -5,11 +5,17 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel demo/index.html --out-dir build",
-    "build": "parcel build src/index.js"
+    "build": "parcel build src/index.js",
+    "test": "jest",
+    "test:dev": " jest --watch"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.8.0",
+    "@babel/preset-env": "^7.8.0",
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
     "parcel-bundler": "^1.12.4"
   }
 }
