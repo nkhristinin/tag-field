@@ -1,6 +1,6 @@
 import { TAGS_CHANGE } from "./events";
 
-const createTagService = ({ isValidTag }) => {
+const createTagService = ({ isValidTag = () => true } = {}) => {
   let tags = [];
   const subscribers = [];
 
