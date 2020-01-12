@@ -8,6 +8,10 @@ const TagField = ({
   delimiters = [" ", ",", ";"],
   placeholder = "add more people...",
 } = {}) => {
+  if (!container) {
+    throw new Error("You need to provide dom element for the container");
+  }
+
   const tagFieldContainer = createElementWithClass("label", "tag-field");
   container.appendChild(tagFieldContainer);
 
