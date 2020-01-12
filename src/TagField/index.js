@@ -7,7 +7,7 @@ const TagField = ({
   delimiters = [" ", ",", ";"],
   placeholder = "add more people...",
 } = {}) => {
-  const tagFieldContainer = createElementWithClass("div", "tag-field");
+  const tagFieldContainer = createElementWithClass("label", "tag-field");
   container.appendChild(tagFieldContainer);
 
   const tagService = createTagService({

@@ -1,7 +1,11 @@
 .tag-field {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-content: flex-start;
+  min-height: 100px;
+  max-height: 150px;
+  overflow-y: auto;
+
   background: #fff;
   width: 100%;
   padding: 4px 8px;
@@ -17,8 +21,9 @@
   display: flex;
   align-items: center;
   height: 24px;
-  margin-right: 6px;
+  margin-right: 8px;
   margin-bottom: 4px;
+  margin-top: 4px;
 }
 
 .tag-field__tag-block--valid {
@@ -32,20 +37,24 @@
 }
 
 .tag-field__tag-block-close {
-  margin-left: 4px;
+  margin-left: 2px;
   display: inline-block;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000000' viewBox='0 0 50 50' width='20px' height='20px'%3E%3Cpath d='M 14.40625 13 L 13 14.40625 L 23.625 25 L 13 35.59375 L 14.40625 37 L 25.0625 26.40625 L 35.6875 37 L 37.09375 35.59375 L 26.46875 25 L 37.09375 14.40625 L 35.6875 13 L 25.0625 23.59375 Z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  width: 20px;
-  height: 20px;
+  background-position: center;
+  width: 16px;
+  height: 16px;
   cursor: pointer;
 }
 
 .tag-field__input {
   border: none;
   font-size: inherit;
+  height: 24px;
+  line-height: 24px;
   margin-right: 6px;
   margin-bottom: 4px;
+  margin-top: 4px;
 }
 .tag-field__input:focus {
   outline: none;
