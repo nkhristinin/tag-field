@@ -14,7 +14,6 @@
   border: 1px solid #c3c2cf;
   border-radius: 4px;
 
-  font-family: OpenSans, Arial, Helvetica, sans-serif;
   font-size: 14px;
 }
 
@@ -40,6 +39,10 @@
   padding: 0 10px;
 }
 
+.tag-field__tag-block-content {
+  line-height: 1;
+}
+
 .tag-field__tag-block--invalid .tag-field__tag-block-content {
   border-bottom: 1px dashed red;
 }
@@ -56,6 +59,7 @@
 }
 
 .tag-field__input {
+  font-family: inherit;
   border: none;
   font-size: inherit;
   height: 24px;
