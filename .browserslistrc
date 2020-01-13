@@ -1,0 +1,8 @@
+# Browsers that we support
+
+defaults
+Chrome >= 35
+Safari >= 7
+Opera >= 26
+Explorer >= 11
+Edge >= 12
