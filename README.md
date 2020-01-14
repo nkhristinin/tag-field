@@ -1,5 +1,7 @@
 # Tag-field
 
+![Image of Yaktocat](https://i.imgur.com/HsRIQrk.jpg)
+
 [Demo](http://email-editor.surge.sh/demo/)
 
 A library to create a field which supports tags
