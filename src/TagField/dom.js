@@ -45,8 +45,8 @@ export const transformStringToTags = (delimiters = [], stringInput = "") =>
     .map(item => item.trim());
 
 export const createInput = ({ delimiters, tagService }) => {
-  const TagFieldInput = createElementWithClass("input", "tag-field__input");
-  TagFieldInput.placeholder = "add more people...";
+  const tagFieldInput = createElementWithClass("input", "tag-field__input");
+  tagFieldInput.placeholder = "add more people...";
 
   const processTags = stringInput => transformStringToTags(delimiters, stringInput).map(tagService.addTag);
 
@@ -59,9 +59,9 @@ export const createInput = ({ delimiters, tagService }) => {
     e.target.focus();
   };
 
-  TagFieldInput.addEventListener("blur", handleAddTag);
+  tagFieldInput.addEventListener("blur", handleAddTag);
 
-  TagFieldInput.addEventListener("keyup", e => {
+  tagFieldInput.addEventListener("keyup", e => {
     if (e.keyCode === ENTER_CODE || delimiters.includes(e.key)) {
       handleAddTag(e);
     }
@@ -71,11 +71,11 @@ export const createInput = ({ delimiters, tagService }) => {
   });
 
   //  asdasd@asdasd.com,   asdasd@asdasd11.com
-  TagFieldInput.addEventListener("paste", e => {
+  tagFieldInput.addEventListener("paste", e => {
     e.preventDefault();
     const clipboardData = (event.clipboardData || window.clipboardData).getData("text");
     processTags(clipboardData);
   });
 
-  return TagFieldInput;
+  return tagFieldInput;
 };
