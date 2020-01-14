@@ -1,5 +1,7 @@
 # Tag-field
 
+[Demo](http://email-editor.surge.sh/demo/)
+
 A library to create a field which supports tags
 
 ```js
