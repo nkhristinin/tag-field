@@ -44,9 +44,9 @@ export const transformStringToTags = (delimiters = [], stringInput = "") =>
     .filter(str => str !== "")
     .map(item => item.trim());
 
-export const createInput = ({ delimiters, tagService }) => {
-  const tagFieldInput = createElementWithClass("input", "tag-field__input");
-  tagFieldInput.placeholder = "add more people...";
+const tagFieldInput = createElementWithClass("input", "tag-field__input");
+export const createInput = ({ delimiters, tagService, placeholder = "" }) => {
+  tagFieldInput.placeholder = placeholder;
 
   const processTags = stringInput => transformStringToTags(delimiters, stringInput).map(tagService.addTag);
 
