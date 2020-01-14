@@ -89,3 +89,56 @@ const editor = TagField({
   container: emailEditorContainer,
 });
 ```
+
+#### getTags
+```js
+  editor.getTags() // ["tag1", "tag2", "email@mail.com"]
+```
+Get list of all tags, return array of `string`.
+
+#### getAllValidTags
+```js
+  editor.getAllValidTags() // ["email@mail.com""]
+```
+Get list of all valid tags, return array of `string`.
+
+
+#### setTagList
+
+```js
+  editor.setTagList(["tag2", "tag4"])
+```
+
+#### addTag
+
+```js
+  editor.addTag("tag5")
+```
+
+Add a new tag to the list. If you try to add a tag that already exists in the list, it will not be added.
+
+#### removeTag
+
+```js
+  editor.removeTag("tag5")
+```
+
+Remove tag by value from the list.
+
+#### removeLastTag
+
+```js
+  editor.removeLastTag(")
+```
+
+Remove last tag from the list.
+
+### Subscribe on changes
+
+Now we only support subscribe on change of the list:
+
+```js
+  editor.on("tags_change", list => console.log("Tag list changed", list));
+  editor.on("tags_change", list => doSomeWork(list));
+```
+
